@@ -2,11 +2,12 @@ package ma.exam.dpexam.Composite;
 
 import lombok.Data;
 import ma.exam.dpexam.Observer.Observable;
+import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-
+@Component
 public class Group extends Figgur implements Serializable {
 
     private ArrayList<Figgur> figgurs;
@@ -14,6 +15,10 @@ public class Group extends Figgur implements Serializable {
     public Group(Point p) {
         super(p);
         figgurs=new ArrayList<>();
+    }
+    public Group() {
+        super(new Point(0,0));
+
     }
 
 

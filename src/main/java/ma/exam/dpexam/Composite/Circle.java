@@ -4,12 +4,14 @@ package ma.exam.dpexam.Composite;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ma.exam.dpexam.Aspect.MyLog;
 import ma.exam.dpexam.Observer.Observable;
 import ma.exam.dpexam.Observer.Parametrage;
+import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 
-
+@Component
 public class Circle extends Figgur implements Serializable {
 
     public double rayon;
@@ -17,7 +19,11 @@ public class Circle extends Figgur implements Serializable {
     public Circle(double v, Point point) {
         super(point);
     }
+    public Circle() {
+        super(new Point(0,0));
+    }
 
+    @MyLog
     @Override
     public double surface() {
         return Math.PI * Math.pow(rayon,2);

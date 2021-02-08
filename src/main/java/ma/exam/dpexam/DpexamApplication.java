@@ -1,5 +1,6 @@
 package ma.exam.dpexam;
 
+import ma.exam.dpexam.Aspect.AppContext;
 import ma.exam.dpexam.Composite.*;
 import ma.exam.dpexam.Observer.Observable;
 import ma.exam.dpexam.Observer.Observer;
@@ -8,6 +9,7 @@ import ma.exam.dpexam.stratgy.Dessin;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import java.util.ArrayList;
@@ -16,12 +18,14 @@ import java.util.ArrayList;
 public class DpexamApplication {
 
     public static void main(String[] args) {
+        AppContext.authenticateUser("admin","admin",new String[]{"ADMIN"});
         SpringApplication.run(DpexamApplication.class, args);
     }
 
     @Bean
-    CommandLineRunner commandLineRunner(){
+    CommandLineRunner commandLineRunner(Circle t,Rectangle r){
         return args -> {
+
             Dessin d =new Dessin();
             d.add(new Circle(2.1,new Point(0,0)));
             Group c=new Group(new Point(1,2));
@@ -30,8 +34,9 @@ public class DpexamApplication {
             ArrayList<Observer> fs=new ArrayList<>();
             fs.add(new Circle(3,new Point(0,0)));
             Parametrage p =new Parametrage(20,20,20,fs);
+            Circle b=new Circle(30,new Point(0,0));
+            b.surface();
             p.notif();
-
         };
     }
 }
