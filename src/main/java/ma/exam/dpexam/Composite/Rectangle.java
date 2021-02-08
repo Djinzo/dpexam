@@ -5,8 +5,10 @@ import lombok.Data;
 import ma.exam.dpexam.Observer.Observable;
 import ma.exam.dpexam.Observer.Parametrage;
 
+import java.io.Serializable;
+
 @Data @AllArgsConstructor
-public class Rectangle extends Figgur{
+public class Rectangle extends Figgur implements Serializable {
 
     public double L;
     public double H;

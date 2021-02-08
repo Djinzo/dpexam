@@ -6,8 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import ma.exam.dpexam.Observer.Observable;
 
+import java.io.Serializable;
+
 @Data @AllArgsConstructor @NoArgsConstructor
-public class Circle extends Figgur{
+public class Circle extends Figgur implements Serializable {
 
     public double rayon;
 

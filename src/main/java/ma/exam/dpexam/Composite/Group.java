@@ -3,11 +3,12 @@ package ma.exam.dpexam.Composite;
 import lombok.Data;
 import ma.exam.dpexam.Observer.Observable;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
 @Data
-public class Group extends Figgur{
+public class Group extends Figgur implements Serializable {
 
     private ArrayList<Figgur> figgurs;
 
