@@ -9,10 +9,14 @@ import ma.exam.dpexam.Observer.Parametrage;
 
 import java.io.Serializable;
 
-@Data @AllArgsConstructor @NoArgsConstructor
+
 public class Circle extends Figgur implements Serializable {
 
     public double rayon;
+
+    public Circle(double v, Point point) {
+        super(point);
+    }
 
     @Override
     public double surface() {

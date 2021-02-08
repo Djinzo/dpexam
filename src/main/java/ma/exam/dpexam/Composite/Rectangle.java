@@ -7,11 +7,17 @@ import ma.exam.dpexam.Observer.Parametrage;
 
 import java.io.Serializable;
 
-@Data @AllArgsConstructor
+
 public class Rectangle extends Figgur implements Serializable {
 
     public double L;
     public double H;
+
+    public Rectangle(double l,double h,Point p) {
+        super(p);
+        this.L=l;
+        this.H=h;
+    }
 
     @Override
     public double surface() {

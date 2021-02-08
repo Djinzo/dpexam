@@ -7,10 +7,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 
-@Data
 public class Group extends Figgur implements Serializable {
 
     private ArrayList<Figgur> figgurs;
+
+    public Group(Point p) {
+        super(p);
+        figgurs=new ArrayList<>();
+    }
 
 
     @Override

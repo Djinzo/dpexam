@@ -1,12 +1,13 @@
 package ma.exam.dpexam.Observer;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import ma.exam.dpexam.Composite.Figgur;
 
 import java.util.ArrayList;
 
 
-@Data
+@Data @AllArgsConstructor
 public class Parametrage implements Observable{
     public  int colorC;
     public int colorS;

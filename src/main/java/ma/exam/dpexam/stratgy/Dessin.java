@@ -13,7 +13,9 @@ public class Dessin {
     ArrayList<Figgur> figgurs;
     ITreter t;
 
-
+    public Dessin(){
+        figgurs=new ArrayList<>();
+    }
     public void traier(){
         t.traiter();
     }

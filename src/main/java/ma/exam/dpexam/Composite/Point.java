@@ -1,9 +1,10 @@
 package ma.exam.dpexam.Composite;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@Data
+@Data @AllArgsConstructor
 public class Point {
 
     public double x;
