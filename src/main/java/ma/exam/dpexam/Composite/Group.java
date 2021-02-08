@@ -18,7 +18,6 @@ public class Group extends Figgur implements Serializable {
     }
     public Group() {
         super(new Point(0,0));
-
     }
 
 

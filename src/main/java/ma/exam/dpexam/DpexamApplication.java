@@ -18,25 +18,18 @@ import java.util.ArrayList;
 public class DpexamApplication {
 
     public static void main(String[] args) {
-        AppContext.authenticateUser("admin","admin",new String[]{"ADMIN"});
+        AppContext.authenticateUser("admin","admin",new String[]{"USER"});
         SpringApplication.run(DpexamApplication.class, args);
     }
 
     @Bean
-    CommandLineRunner commandLineRunner(Circle t,Rectangle r){
+    CommandLineRunner commandLineRunner(Circle t,Rectangle r,Parametrage p){
         return args -> {
+            t.surface();
+            r.piremiter();
+            p.add(t);
+            p.add(r);
 
-            Dessin d =new Dessin();
-            d.add(new Circle(2.1,new Point(0,0)));
-            Group c=new Group(new Point(1,2));
-            c.addFigure(new Rectangle(20,30,new Point(0,0)));
-            d.add(c);
-            ArrayList<Observer> fs=new ArrayList<>();
-            fs.add(new Circle(3,new Point(0,0)));
-            Parametrage p =new Parametrage(20,20,20,fs);
-            Circle b=new Circle(30,new Point(0,0));
-            b.surface();
-            p.notif();
         };
     }
 }

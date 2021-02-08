@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ma.exam.dpexam.Aspect.MyLog;
+import ma.exam.dpexam.Aspect.SecuredByAspect;
 import ma.exam.dpexam.Observer.Observable;
 import ma.exam.dpexam.Observer.Parametrage;
 import org.springframework.stereotype.Component;
@@ -40,6 +41,8 @@ public class Circle extends Figgur implements Serializable {
     }
 
     @Override
+    @MyLog
+    @SecuredByAspect(roles = {"ADMIN"})
     public void update(Observable o) {
         int cc=((Parametrage) o).getColorC();
         int cs=((Parametrage) o).getColorS();
