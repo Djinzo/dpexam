@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ma.exam.dpexam.Observer.Observable;
+import ma.exam.dpexam.Observer.Parametrage;
 
 import java.io.Serializable;
 
@@ -30,6 +31,9 @@ public class Circle extends Figgur implements Serializable {
 
     @Override
     public void update(Observable o) {
-
+        int cc=((Parametrage) o).getColorC();
+        int cs=((Parametrage) o).getColorS();
+        int ec=((Parametrage) o).getEpaisseurC();
+        System.out.println("color conteur :"+cc+" colore surface :"+cs+"Epaisseur Color"+ec);
     }
 }
